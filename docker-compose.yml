@@ -1,0 +1,17 @@
+services:
+  caddy:
+    container_name: ${CONTAINER_NAME}
+    network_mode: bridge
+    image: caddy:latest
+    restart: unless-stopped
+    cpu_shares: 2048
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    volumes:
+      - ${DATA_PATH}/Caddyfile:/etc/caddy/Caddyfile
+      - ${DATA_PATH}/caddy/data:/data
+      - ${DATA_PATH}/config:/config
