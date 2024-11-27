@@ -1,0 +1,5 @@
+XXX.XXX.XXX {
+  handle {
+    reverse_proxy XXX.XXX.XXX.XXX:XX
+  }
+}
